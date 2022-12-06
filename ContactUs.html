@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="HOME_FINAL_PROJECT.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Contact Us </title>
+</head>
+<body>
+
+<!-- SIDE BAR -->
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="Home.html#main"> <img src = 'https://cdn-icons-png.flaticon.com/512/25/25694.png' style = "width:20px; height:20px;"> Home </a>
+  <a href="Home.html#About">About</a>
+  <ul>
+	<li><a href="Home.html#History">History</a></li>
+	<li><a href="Home.html#Geography">Geography</a></li>
+	<li><a href="Home.html#Demographics">Demographics</a></li>
+	<li><a href="Home.html#Culture">Culture</a></li>
+  </ul>
+  <a href="Home.html#Services">Services</a>
+  <ul>
+  <li><a href="Home.html#Luzon">Luzon</a></li>
+  <li><a href="Home.html#Visayas">Visayas</a></li>
+  <li><a href="Home.html#Mindanao">Mindanao</a></li>
+  </ul>
+  <a href="VideoGallery.html"> <img src = 'https://www.iconpacks.net/icons/1/free-video-icon-818-thumb.png' style = "width:20px; height:20px;"> Video Gallery</a>
+  <a href="LogIn.html"> <img src = 'https://cdn-icons-png.flaticon.com/512/152/152533.png' style = "width:20px; height:20px;"> Login</a>
+  <a href="ContactUs.html"> <img src = 'https://icons.veryicon.com/png/o/miscellaneous/jiankangxian/contact-us-20.png' style = "width:20px; height:20px;">  Contact Us</a>
+</div>
+
+<!-- MAIN PART OF THE PAGE -->
+
+<div id="main">
+<div class="topnav">
+  <button class="openbtn" onclick="openNav()">☰</button>
+  <a class="active" href="#home">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Coat_of_arms_of_the_Philippines.svg/1200px-Coat_of_arms_of_the_Philippines.svg.png" alt="Coat of Arms Philippines" height="75px">
+  <img src="https://itsmorefuninthephilippines.co.uk/wp-content/uploads/IMFITP_multicolored.png" alt="It's more fun in the Philippines"  height="75px"> 
+  </a>
+	<h1 style = 'float:right; color:white; margin:35px;'> Time is <span id="time"> </span></h1>
+  </div>
+  
+	<section id="ContactUs">
+		<blockquote>
+			<div class = 'FunPhil'>
+	<div class = 'CUs'>
+	<center>
+	<h1> Contact Us </h1>
+	<form id="form_id" method="post" name="contact">
+
+    <label for="fname" style = 'font-size:30px;'> <b>First Name:</b> </label>
+	<br>
+    <input type="text" id="fname" name="firstname" placeholder="Name"  style='width:300px; height:50px; font-size: 20px;'>
+	<br>
+    <label for="lname" style = 'font-size:30px;'><b>Last Name:</b></label>
+	<br>
+    <input type="text" id="lname" name="lastname" placeholder="Surname"  style='width:300px; height:50px; font-size: 20px;'>
+	<br>
+    <label for='email' style = 'font-size:30px;'> <b>Email Address: </b> </label>
+	<br>
+    <input type='text' id='email' name="email" placeholder="Enter E-mail Address"  style='width:300px; height:50px; font-size: 20px;'>
+	<br>
+    <label for="subject" style = 'font-size:30px;'><b>Comments</b></label><br>
+    <textarea id="subject" name="subject" placeholder="Feedback" style="height:300px; width:450px;font-size: 20px;" required></textarea>
+	<br>
+    <button class="submit" type="button" onclick="SubmitFunction()">Submit</button>
+	</div>
+			</center>
+		</blockquote>
+	</section>
+	
+	<footer>
+<center>
+<div class = 'FooterNav'>
+
+<a href = 'Home.html#About'> About Philippines </a> <br>
+<a href = 'Home.html#Services'> Tourists Attraction </a><br>
+<a href = 'VideoGallery.html'> Video Gallery </a><br>
+<a href = 'ContactUs.html'> Contact Us </a><br>
+<a href = 'LogIn.html'> Log In </a><br>
+<p> @Copyright 2022 </p>
+</center>
+
+</div>
+</footer>
+
+
+
+
+<!-- Script for the Side Bar -->
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "220px";
+  document.getElementById("main").style.marginLeft = "220px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+<!-- Script for the Date -->
+var datetime = new Date();
+console.log(datetime);
+document.getElementById("time").textContent = datetime; //it will print on html page
+
+
+function refreshTime() {
+  const timeDisplay = document.getElementById("time");
+  const dateString = new Date().toLocaleString();
+  const formattedString = dateString.replace(", ", " - ");
+  timeDisplay.textContent = formattedString;
+}
+  setInterval(refreshTime, 1000);
+</script>
+   
+   
+<script>
+function SubmitFunction()
+    {
+         var firstname = document.contact.firstname.value;
+         var lastname = document.contact.lastname.value;
+         var email_address = document.contact.email.value;
+         var comment = document.contact.subject.value;
+
+     if (firstname == "Allen" && lastname == "Payumo" && email_address == "allen.payumo@letran.edu.ph" && comment == "Nice")
+        {
+        alert("Login Successfully!");
+        window.location="ABOUT.html"
+        return true;
+        }
+     else
+        {
+        alert("Invalid Input!");
+        }
+    }
+</script>
+   
+   
+   
+   
+</body>
+</html> 
